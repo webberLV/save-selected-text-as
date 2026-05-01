@@ -1,12 +1,13 @@
 # Save Selected Text As
 
-Save highlighted webpage text as a file from the contexet menu or toolbar icon.
+Save highlighted webpage text as a local `.txt` file.
 
-- Select text --> 'Save text as..'  to download selected texted text to a file
-- Left click action toolbar icon saves current selected texts 
-- Icon briefly changes color if no text is selected or extension doesn't have access to the web pag.e 
-- No tracking, analytics, or network requests
+## Use
+
+Select text, then right-click **Save text as** or click the toolbar icon.
+
+If no text is selected, the toolbar icon briefly changes color.
 
 ## Privacy
 
-This extension does not collect, store, or transmit any user data. All processing is done locally in the browser.
+No tracking, analytics, remote code, or network requests.
