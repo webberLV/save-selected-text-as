@@ -2,8 +2,6 @@
 
 Save highlighted webpage text as a local file.
 
-![Small promo tile](store-assets/small-promo-tile.png)
-
 ## How to use
 
 1. Select text on a webpage.
@@ -18,3 +16,4 @@ If no text is selected, the toolbar icon briefly changes color.
 ## Privacy
 
 Selected text is used locally only to create the file download. The extension does not collect or send user data.
+![Small promo tile](store-assets/small-promo-tile.png)
