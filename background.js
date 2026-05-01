@@ -1,8 +1,8 @@
 'use strict';
 
 const MENU_ID = 'save-selected-text-as';
-const DEFAULT_FILENAME = 'selected-text.txt...';
-const ICON_FLASH_MS = 1500;
+const DEFAULT_FILENAME = 'selected-text.txt';
+const ICON_FLASH_MS = 800;
 const NO_SELECTION_COLOR = '#ff5a5f';
 
 const DEFAULT_ICON = {
@@ -18,7 +18,7 @@ function createContextMenu() {
   chrome.contextMenus.removeAll(() => {
     chrome.contextMenus.create({
       id: MENU_ID,
-      title: 'Save text as',
+      title: 'Save selected text as...',
       contexts: ['selection']
     });
   });

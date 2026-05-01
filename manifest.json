@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Save Selected Text As",
   "version": "1.2.0",
-  "description": "Save selected webpage text as a downloadable file from the right-click menu or toolbar icon.",
+  "description": "Save highlighted webpage text as a local text file from the right-click menu or toolbar button.",
   "author": "webberLV",
   "homepage_url": "https://github.com/webberLV",
   "minimum_chrome_version": "88",
@@ -16,7 +16,7 @@
     "service_worker": "background.js"
   },
   "action": {
-    "default_title": "Save selected text as",
+    "default_title": "Save selected text as...",
     "default_icon": {
       "16": "icons/icon16.png",
       "32": "icons/icon32.png",

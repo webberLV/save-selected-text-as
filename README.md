@@ -2,12 +2,14 @@
 
 Save highlighted webpage text as a local `.txt` file.
 
-#### Use
+## How to use
 
-Select text, then right-click **Save text as** or click the toolbar icon.
+1. Select text on a webpage.
+2. Right-click and choose **Save selected text as...**, or click the extension toolbar icon.
+3. Choose where to save the file.
 
 If no text is selected, the toolbar icon briefly changes color.
 
-#### Privacy
+## Privacy
 
-No tracking, analytics, remote code, or network requests.
+Selected text is used locally only to create the file download. The extension does not collect or send user data.
