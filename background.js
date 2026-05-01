@@ -1,7 +1,7 @@
 'use strict';
 
 const MENU_ID = 'save-selected-text-as';
-const DEFAULT_FILENAME = 'selected-text.txt';
+const DEFAULT_FILENAME = 'selected-text.txt...';
 const ICON_FLASH_MS = 1500;
 const NO_SELECTION_COLOR = '#ff5a5f';
 
