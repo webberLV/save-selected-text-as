@@ -2,8 +2,9 @@
 
 const MENU_ID = 'save-selected-text-as';
 const DEFAULT_FILENAME = 'selected-text.txt';
-const ICON_FLASH_MS = 800;
+const ICON_FLASH_MS = 600;
 const NO_SELECTION_COLOR = '#ff5a5f';
+const SUCCESS_COLOR = '#34c759';
 
 const DEFAULT_ICON = {
   16: 'icons/icon16.png',
@@ -104,18 +105,28 @@ async function flashIconColor(color = NO_SELECTION_COLOR) {
 
 function saveTextAsFile(selectedText) {
   if (typeof selectedText !== 'string' || selectedText.length === 0) {
-    flashIconColor();
+    flashIconColor(NO_SELECTION_COLOR);
     return;
   }
 
   const dataUrl = `data:text/plain;charset=utf-8,${encodeURIComponent(selectedText)}`;
 
-  chrome.downloads.download({
-    url: dataUrl,
-    filename: DEFAULT_FILENAME,
-    saveAs: true,
-    conflictAction: 'uniquify'
-  });
+  chrome.downloads.download(
+    {
+      url: dataUrl,
+      filename: DEFAULT_FILENAME,
+      saveAs: true,
+      conflictAction: 'uniquify'
+    },
+    (downloadId) => {
+      if (chrome.runtime.lastError || !downloadId) {
+        flashIconColor(NO_SELECTION_COLOR);
+        return;
+      }
+
+      flashIconColor(SUCCESS_COLOR);
+    }
+  );
 }
 
 function getSelectedTextFromPage() {
@@ -142,7 +153,7 @@ function getSelectedTextFromPage() {
 
 async function saveSelectionFromActiveTab(tab) {
   if (!tab || typeof tab.id !== 'number') {
-    flashIconColor();
+    flashIconColor(NO_SELECTION_COLOR);
     return;
   }
 
@@ -161,7 +172,7 @@ async function saveSelectionFromActiveTab(tab) {
 
     saveTextAsFile(selectedText || '');
   } catch (error) {
-    flashIconColor();
+    flashIconColor(NO_SELECTION_COLOR);
   }
 }
 
